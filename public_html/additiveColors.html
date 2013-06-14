@@ -1,0 +1,168 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>additive Farbmischung</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <BODY BGCOLOR="#FFFFFF" onload="setMyColor();">
+        <script src="additiveColors.js"></script>
+        <FORM name=myform>         
+            <CENTER><TABLE BORDER=1 CELLPADDING=5 WIDTH=450>
+
+                    <TR>
+
+                        <TD WIDTH=250 BGCOLOR="#FFFFFF">
+
+                            <P><!-- text field for hex code --></P>
+
+                    <CENTER>
+                        <INPUT TYPE=text NAME=mycolor VALUE="?" SIZE=10 disabled onkeyup="alert(text)" onfocus="old = myform.mycolor.value;" onblur="myform.mycolor.value = old">
+                    </CENTER>
+                    </TD>
+
+                    <TD WIDTH=100 BGCOLOR="#FFFFFF">
+
+                    <CENTER><FONT SIZE="+1">hexadecimal</FONT></CENTER>
+
+                    </TD>
+
+                    <TD WIDTH=100 BGCOLOR="#FFFFFF">
+
+                    <CENTER><FONT SIZE="+1">decimal</FONT></CENTER>
+
+                    </TD>
+
+                    </TR>
+
+                    <TR>
+
+                        <TD WIDTH=250 BGCOLOR="#FF0000">
+
+                            <P><!-- buttons for RED --></P>
+
+                    <CENTER>
+                        <INPUT TYPE=button NAME=min VALUE="|&lt;" onclick="minimumValue(6, 5, 'Red')">
+                        <INPUT TYPE=button NAME=minus VALUE="-" onclick="minusValue(6, 5, 'Red')">&nbsp;
+                        <INPUT TYPE=button NAME=plus VALUE="+" onclick="plusValue(6, 5, 'Red')">
+                        <INPUT TYPE=button NAME=max VALUE="&gt;|" onclick="maximumValue(6, 5, 'Red')">
+                    </CENTER>
+                    </TD>
+
+                    <TD WIDTH=100>
+
+                        <P><!--t ext fields for RED --></P>
+
+                    <CENTER>
+                        <INPUT TYPE=text NAME=red VALUE="FF" SIZE=3 disabled onkeyup="alert(text)" onfocus="old = myform.red.value;" onblur="myform.red.value = old">
+                    </CENTER>
+                    </TD>
+
+                    <TD WIDTH=100>
+
+                    <CENTER>
+                        <INPUT TYPE=text NAME=rr VALUE="255" SIZE=4 disabled onkeyup="alert(text)" onfocus="old = myform.rr.value;" onblur="myform.rr.value = old">
+                    </CENTER>
+                    </TD>
+
+                    </TR>
+
+                    <TR>
+
+                        <TD WIDTH=250 BGCOLOR="#00FF00">
+
+                            <P><!-- buttons for GREEN --></P>
+
+                    <CENTER>
+                        <INPUT TYPE=button NAME=min VALUE="|&lt;" onclick="minimumValue(12, 11, 'Green')">
+                        <INPUT TYPE=button NAME=minus VALUE="-" onclick="minusValue(12, 11, 'Green')">
+                        <INPUT TYPE=button NAME=plus VALUE="+" onclick="plusValue(12, 11, 'Green')">
+                        <INPUT TYPE=button NAME=max VALUE="&gt;|" onclick="maximumValue(12, 11, 'Green')">
+                    </CENTER>
+                    </TD>
+
+                    <TD WIDTH=100>
+
+                        <P><!-- text fields for GREEN --></P>
+
+                    <CENTER>
+                        <INPUT TYPE=text NAME=green VALUE="FF" SIZE=3 disabled onkeyup="alert(text)" onfocus="old = myform.green.value;" onblur="myform.green.value = old">
+                    </CENTER>
+                    </TD>
+
+                    <TD WIDTH=100>
+
+                    <CENTER>
+                        <INPUT TYPE=text NAME=gg VALUE="255" SIZE=4 disabled onkeyup="alert(text)" onfocus="old = myform.gg.value;" onblur="myform.gg.value = old">
+                    </CENTER>
+                    </TD>
+
+                    </TR>
+
+                    <TR>
+
+                        <TD WIDTH=250 BGCOLOR="#0000FF">
+
+                            <P><!-- buttons for BLUE --></P>
+
+                    <CENTER>
+                        <INPUT TYPE=button NAME=min VALUE="|&lt;" onclick="minimumValue(18, 17, 'Blue')">
+                        <INPUT TYPE=button NAME=minus VALUE="-" onclick="minusValue(18, 17, 'Blue')">
+                        <INPUT TYPE=button NAME=plus VALUE="+" onclick="plusValue(18, 17, 'Blue')">
+                        <INPUT TYPE=button NAME=max VALUE="&gt;|" onclick="maximumValue(18, 17, 'Blue')">
+                    </CENTER>
+                    </TD>
+
+                    <TD WIDTH=100>
+
+                        <P><!-- text fields for BLUE --></P>
+
+                    <CENTER>
+                        <INPUT TYPE=text NAME=blue VALUE="FF" SIZE=3 disabled onkeyup="alert(text)" onfocus="old = myform.blue.value;" onblur="myform.blue.value = old">
+                    </CENTER>
+                    </TD>
+
+                    <TD WIDTH=100>
+
+                    <CENTER>
+                        <INPUT TYPE=text NAME=bb VALUE="255" SIZE=4 disabled onkeyup="alert(text)" onfocus="old = myform.bb.value;" onblur="myform.bb.value = old">
+                    </CENTER>
+                    </TD>
+
+                    </TR>
+
+                    <TR>
+
+                        <TD WIDTH=250>
+
+                            <P><!-- buttons for BLACK and WHITE --></P>
+
+                    <CENTER>
+                        <INPUT TYPE=button NAME=white VALUE="white" onclick="doWhite()">&nbsp;&nbsp;&nbsp;
+                        <INPUT TYPE=button NAME=black VALUE="black" onclick="doBlack()">
+                    </CENTER>
+                    </TD>
+
+                    <TD WIDTH=100>
+
+                    </TD>
+
+                    <TD WIDTH=100>
+
+                    </TD>
+
+                    </TR>
+
+                </TABLE>
+
+            </CENTER>
+
+        </FORM>
+
+    <CENTER>
+    </body>
+</html>
