@@ -1,0 +1,360 @@
+
+<HTML>
+<HEAD>
+   <TITLE>27: Reihenschaltung</TITLE>
+<SCRIPT language=JavaScript><!--
+var R1, R2, U, U1, U2, I;
+
+function loeschen() {
+document.myform.u1.value="";
+document.myform.u2.value="";
+document.myform.r1.value="";
+document.myform.r2.value="";
+document.myform.u.value="";
+document.myform.i.value="";
+document.myform.text.value="";
+}
+
+function berechneU1U2I() {
+if ((R1=="") || (R2=="") || (U=="")) {
+document.myform.text.value+="R1, R2 oder U fehlt !";return;}
+R = Number(R1) + Number(R2);
+I=U/R;
+U1 = I*R1;
+U2 = I*R2;
+document.myform.u1.value=Math.round(1000*U1)/1000;
+document.myform.u2.value=Math.round(1000*U2)/1000;
+document.myform.i.value=Math.round(1000*I)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneR1U2I() {
+if ((R2=="") || (U1=="") || (U=="")) {document.myform.text.value="R2, U1 oder U fehlt !";return}
+U2 = U - U1;
+if (U2<=0) document.myform.text.value+=" Mit U1>U nicht loesbar !";
+R1 = R2*U1/U2;
+R = Number(R1) + Number(R2);
+I = U/R;
+document.myform.u2.value=Math.round(1000*U2)/1000;
+document.myform.r1.value=Math.round(1000*R1)/1000;
+document.myform.i.value=Math.round(1000*I)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneR2U1I() {
+if ((R1=="") || (U2=="") || (U=="")) {document.myform.text.value+="R1, U oder U2 fehlt !";return}
+U1 = U - U2;
+if (U1<=0) document.myform.text.value+=" Mit U2>U nicht loesbar !";
+R2 = R1*U2/U1;
+R = Number(R1) + Number(R2);
+I = U/R;
+document.myform.u1.value=Math.round(1000*U1)/1000;
+document.myform.r2.value=Math.round(1000*R2)/1000;
+document.myform.i.value=Math.round(1000*I)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneR1R2U() {
+if ((U1=="") || (U2=="") || (I=="")) {document.myform.text.value+="U1, U2 oder I fehlt !";return}
+U = Number(U1) + Number(U2);
+R = U/I;
+R1 = R*(U1/U2)/(1+U1/U2);
+R2 = R - R1;
+if (R2<=0) document.myform.text.value+="Mit diesen Werten nicht loesbar !";
+document.myform.u.value=Math.round(1000*U)/1000;
+document.myform.r1.value=Math.round(1000*R1)/1000;
+document.myform.r2.value=Math.round(1000*R2)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneR2U1U() {
+if ((R1=="") || (U2=="") || (I=="")) {document.myform.text.value+="R1, U2 oder I fehlt !";return}
+U1 = I*R1;
+U = Number(U1) + Number(U2);
+R2 = U2/I;
+document.myform.u.value=Math.round(1000*U)/1000;
+document.myform.u1.value=Math.round(1000*U1)/1000;
+document.myform.r2.value=Math.round(1000*R2)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneR1U2U() {
+if ((R2=="") || (U1=="") || (I=="")) {document.myform.text.value+="R2, U1 oder I fehlt !";return}
+U2 = I*R2;
+U = Number(U1) + Number(U2);
+R1 = U1/I;
+document.myform.u.value=Math.round(1000*U)/1000;
+document.myform.u2.value=Math.round(1000*U2)/1000;
+document.myform.r1.value=Math.round(1000*R1)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneU1U2U() {
+if ((R1=="") || (R2=="") || (I=="")) {document.myform.text.value+="R1, R2 oder I !";return}
+R = Number(R1) + Number(R2);
+U = I*R;
+U1 = I*R1;
+U2 = I*R2;
+document.myform.u.value=Math.round(1000*U)/1000;
+document.myform.u1.value=Math.round(1000*U1)/1000;
+document.myform.u2.value=Math.round(1000*U2)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneUR2I() {
+if ((U1=="") || (U2=="") || (R1=="")) {document.myform.text.value+="U1, U2 oder R1 fehlt !";return}
+U = Number(U1) + Number(U2);
+R2 = R1*U2/U1;
+R = Number(R1) + Number(R2);
+I = U/R;
+document.myform.u.value=Math.round(1000*U)/1000;
+document.myform.r2.value=Math.round(1000*R2)/1000;
+document.myform.i.value=Math.round(1000*I)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneUR1I() {
+if ((U1=="") || (R2=="") || (U2=="")) {document.myform.text.value+="U1, U2 oder R2 fehlt !";return}
+U = Number(U1) + Number(U2);
+R1 = R2*U1/U2;
+R = Number(R1) + Number(R2);
+I = U/R;
+document.myform.u.value=Math.round(1000*U)/1000;
+document.myform.r1.value=Math.round(1000*R1)/1000;
+document.myform.i.value=Math.round(1000*I)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneUU1I() {
+if ((R1=="") || (R2=="") || (U2=="")) {document.myform.text.value+="R1, R2 oder U2 !";return}
+R = Number(R1) + Number(R2);
+I = U2/R2;
+U1 = I*R1;
+U = Number(U1) + Number(U2);
+document.myform.u.value=Math.round(1000*U)/1000;
+document.myform.u1.value=Math.round(1000*U1)/1000;
+document.myform.i.value=Math.round(1000*I)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneUU2I() {
+if ((R1=="") || (R2=="") || (U1=="")) {document.myform.text.value+="R1, R2 oder U1 fehlt !";return}
+R = Number(R1) + Number(R2);
+I = U1/R1;
+U2 = I*R2;
+U = Number(U1) + Number(U2);
+document.myform.u.value=Math.round(1000*U)/1000;
+document.myform.u2.value=Math.round(1000*U2)/1000;
+document.myform.i.value=Math.round(1000*I)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneU2R2I() {
+if ((U1=="") || (R1=="") || (U=="")) {document.myform.text.value+="U, U1 oder R1 fehlt !";return}
+I = U1/R1;
+U2 = U - U1;
+if (U2<=0) document.myform.text.value+=" Mit U1>U nicht loesbar !";
+R2 = U2/I;
+document.myform.u2.value=Math.round(1000*U2)/1000;
+document.myform.r2.value=Math.round(1000*R2)/1000;
+document.myform.i.value=Math.round(1000*I)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneU1R1I() {
+if ((U2=="") || (R2=="") || (U=="")) {document.myform.text.value+="U, U2 oder R2 fehlt !";return}
+I = U2/R2;
+U1 = U - U2;
+if (U1<=0) document.myform.text.value+=" Mit U2>U nicht loesbar !";
+R1 = U1/I;
+document.myform.u1.value=Math.round(1000*U1)/1000;
+document.myform.r1.value=Math.round(1000*R1)/1000;
+document.myform.i.value=Math.round(1000*I)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneU1U2R2() {
+if ((I=="") || (U1=="") || (U=="")) {document.myform.text.value+="U, U1 oder I fehlt !";return}
+U1 = I*R1;
+U2 = U - U1;
+if (U2<=0) document.myform.text.value+=" Mit U1>U nicht loesbar !";
+R2 = U2/I;
+document.myform.u1.value=Math.round(1000*U1)/1000;
+document.myform.u2.value=Math.round(1000*U2)/1000;
+document.myform.r2.value=Math.round(1000*R2)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneU1U2R1() {
+if ((I=="") || (R2=="") || (U=="")) {document.myform.text.value+="U, I oder R2 fehlt !";return}
+U2 = I*R2;
+U1 = U - U2;
+if (U1<=0) document.myform.text.value+=" Mit U2>U nicht loesbar !";
+R1 = U1/I;
+document.myform.u1.value=Math.round(1000*U1)/1000;
+document.myform.u2.value=Math.round(1000*U2)/1000;
+document.myform.r1.value=Math.round(1000*R1)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneR1R2U1() {
+if ((I=="") || (U2=="") || (U=="")) {document.myform.text.value+="U, U2 oder I fehlt !";return}
+U1 = U - U2;
+if (U1<=0) document.myform.text.value+=" Mit U2>U nicht loesbar !";
+R1 = U1/I;
+R = U/I;
+R2 = R - R1;
+if (R2<=0) document.myform.text.value+="Mit diesen Werte nnicht loesbar !";
+document.myform.u1.value=Math.round(1000*U1)/1000;
+document.myform.r1.value=Math.round(1000*R1)/1000;
+document.myform.r2.value=Math.round(1000*R2)/1000;
+document.myform.text.value="OK";
+}
+
+function berechneR1R2U2() {
+if ((U1=="") || (U=="") || (I=="")) {document.myform.text.value+="U, U1 oder I !";return}
+U2 = U - U1;
+if (U2<=0) document.myform.text.value+="Mit U1>U nicht loesbar !";
+R2 = U2/I;
+R = U/I;
+R1 = R - R2;
+if (R2<=0) document.myform.text.value+="Mit diesen Werten nicht loesbar !";
+document.myform.u2.value=Math.round(1000*U2)/1000;
+document.myform.r1.value=Math.round(1000*R1)/1000;
+document.myform.r2.value=Math.round(1000*R2)/1000;
+document.myform.text.value="OK";
+}
+
+
+
+function klick() {
+
+R1 = document.myform.r1.value;
+R2 = document.myform.r2.value;
+U = document.myform.u.value;
+U1 = document.myform.u1.value;
+U2 = document.myform.u2.value;
+I = document.myform.i.value;
+
+str=R1+R2+U1+U2+U+I;
+if (str.length<2) {document.myform.text.value+="Zu wenig Daten !";return}
+
+OK=false;
+
+if ((I=="") && (U2=="") && (R2=="")) {document.myform.text.value+="Nicht loesbar !";OK=true;return}
+if ((I=="") && (U1=="") && (R1=="")) {document.myform.text.value+="Nicht loesbar !";OK=true;return}
+
+if ((U1=="") && (U2=="") && (I=="")) {berechneU1U2I();OK=true;return}
+if ((R1=="") && (R2=="") && (U=="")) {berechneR1R2U();OK=true;return}
+
+if ((R1=="") && (U2=="") && (I=="")) {berechneR1U2I();OK=true;return}
+if ((R2=="") && (U1=="") && (I=="")) {berechneR2U1I();OK=true;return}
+
+if ((U=="") && (R2=="") && (U1=="")) {berechneR2U1U();OK=true;return}
+if ((U=="") && (R1=="") && (U2=="")) {berechneR1U2U();OK=true;return}
+
+if ((U1=="") && (U2=="") && (U=="")) {berechneU1U2U();OK=true;return}
+
+if ((U=="") && (R2=="") && (I=="")) {berechneUR2I();OK=true;return}
+if ((U=="") && (R1=="") && (I=="")) {berechneUR1I();OK=true;return}
+
+if ((I=="") && (U=="") && (U1=="")) {berechneUU1I();OK=true;return}
+if ((I=="") && (U=="") && (U2=="")) {berechneUU2I();OK=true;return}
+
+if ((I=="") && (U2=="") && (R2=="")) {berechneU2R2I();OK=true;return}
+if ((I=="") && (U1=="") && (R1=="")) {berechneU1R1I();OK=true;return}
+
+if ((R2=="") && (U1=="") && (U2=="")) {berechneU1U2R2();OK=true;return}
+if ((R1=="") && (U1=="") && (U2=="")) {berechneU1U2R1();OK=true;return}
+
+if ((R1=="") && (R2=="") && (U1=="")) {berechneR1R2U1();OK=true;return}
+if ((R1=="") && (R2=="") && (U2=="")) {berechneR1R2U2();OK=true;return}
+
+if (OK==false) document.myform.text.value+="Nicht gerechnet !"
+
+}
+--></SCRIPT><script language="JavaScript" src=../menu.js></script>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" onload="document.jump.menu.options[27].selected=true">
+<CENTER><FORM ACTION="" METHOD=POST name=myform>
+   <CENTER><TABLE BORDER=1 WIDTH=370 HEIGHT=250 BACKGROUND="schalt3.gif">
+      <TR>
+         <TD>
+            <CENTER><TABLE BORDER=0 CELLSPACING=1 WIDTH=360 HEIGHT=250>
+               <TR>
+                  <TD WIDTH=120 HEIGHT=50>
+                     <CENTER>U1=<INPUT TYPE=text NAME=u1 VALUE="" SIZE=10>V</CENTER>
+                  </TD>
+                  <TD WIDTH=120 HEIGHT=50>
+                     <CENTER>Strom I<BR>
+                     <INPUT TYPE=text NAME=i VALUE="" SIZE=10>A</CENTER>
+                  </TD>
+                  <TD WIDTH=120 HEIGHT=50>
+                     <CENTER>U2=<INPUT TYPE=text NAME=u2 VALUE="" SIZE=10>V</CENTER>
+                  </TD>
+               </TR>
+               <TR>
+                  <TD WIDTH=120 HEIGHT=70>
+                     <P>
+                  </TD>
+                  <TD VALIGN=top WIDTH=120 HEIGHT=70>
+                     <P>
+                  </TD>
+                  <TD WIDTH=120 HEIGHT=70>
+                     <P>
+                  </TD>
+               </TR>
+               <TR>
+                  <TD VALIGN=bottom WIDTH=120 HEIGHT=30>
+                     <CENTER>&nbsp;&nbsp;&nbsp;&nbsp;R1=<INPUT TYPE=text NAME=r1 VALUE="6" SIZE=6>&Omega;</CENTER>
+                  </TD>
+                  <TD WIDTH=120 HEIGHT=30>
+                     <P>
+                  </TD>
+                  <TD VALIGN=bottom WIDTH=120 HEIGHT=30>
+                     <CENTER>R2=<INPUT TYPE=text NAME=r2 VALUE="15" SIZE=6>&Omega;</CENTER>
+                  </TD>
+               </TR>
+               <TR>
+                  <TD WIDTH=120 HEIGHT=50>
+                     <P>
+                  </TD>
+                  <TD WIDTH=120 HEIGHT=50>
+                     <P>
+                  </TD>
+                  <TD WIDTH=120 HEIGHT=50>
+                     <P>
+                  </TD>
+               </TR>
+               <TR>
+                  <TD WIDTH=120 HEIGHT=50>
+                     <P>
+                  </TD>
+                  <TD VALIGN=top WIDTH=120 HEIGHT=50>
+                     <CENTER>U =<BR>
+                     <INPUT TYPE=text NAME=u VALUE="5" SIZE=10>V</CENTER>
+                  </TD>
+                  <TD WIDTH=120 HEIGHT=50>
+                     <P>
+                  </TD>
+               </TR>
+            </TABLE>
+            </CENTER>
+         </TD>
+      </TR>
+   </TABLE>
+   
+   <P><INPUT TYPE=text NAME=text VALUE="" SIZE=60>
+   
+   <P><INPUT TYPE=button NAME=Taste VALUE="rechne" onclick="klick()">&nbsp;&nbsp;&nbsp;&nbsp;<INPUT TYPE=button NAME=Taste VALUE="loeschen" onclick="loeschen()"></CENTER>
+   
+   <P>
+</FORM>&nbsp;
+
+<P>&nbsp;
+
+<P>&nbsp;</CENTER>
+
+<P>
+</BODY>
+</HTML>

@@ -1,0 +1,98 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Würfeln</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="JavaScript">
+            var anzahlWuerfe=1;
+            
+            function klick_wButton() {
+                var n = Math.floor(6 * Math.random()) + 1;
+                document.images[0].src = "img/w" + n + ".gif";
+            }
+
+            function wurf_b2() {
+                var n = Math.floor(6 * Math.random()) + 1;
+                var y = Math.floor(6 * Math.random()) + 1;
+                document.images[1].src = "img/w" + n + ".gif";
+                document.images[2].src = "img/w" + y + ".gif";
+                
+                z=n+y;
+                switch(z){
+                    case 2: document.form.a2.value= Number(document.form.a2.value)+Number(1); break;
+                    case 3: document.form.a3.value= Number(document.form.a3.value)+Number(1); break;
+                    case 4: document.form.a4.value= Number(document.form.a4.value)+Number(1); break;
+                    case 5: document.form.a5.value= Number(document.form.a5.value)+Number(1); break;
+                    case 6: document.form.a6.value= Number(document.form.a6.value)+Number(1); break;
+                    case 7: document.form.a7.value= Number(document.form.a7.value)+Number(1); break;
+                    case 8: document.form.a8.value= Number(document.form.a8.value)+Number(1); break;
+                    case 9: document.form.a9.value= Number(document.form.a9.value)+Number(1); break;
+                    case 10: document.form.a10.value= Number(document.form.a10.value)+Number(1); break;
+                    case 11: document.form.a11.value= Number(document.form.a11.value)+Number(1); break;
+                    case 12: document.form.a12.value= Number(document.form.a12.value)+Number(1); break;
+                }
+                
+            }
+            
+            function klick_wButton2(){
+                for(var i =0; i<anzahlWuerfe;i++)wurf_b2();
+            }
+
+            function klick_delButton() {
+                 document.form.a2.value="";
+                 document.form.a3.value="";
+                 document.form.a4.value="";
+                 document.form.a5.value="";
+                 document.form.a6.value="";
+                 document.form.a7.value="";
+                 document.form.a8.value="";
+                 document.form.a9.value="";
+                 document.form.a10.value="";
+                 document.form.a11.value="";
+                 document.form.a12.value="";
+            }
+
+        </script>
+    </head>
+    <body>
+        <Form name="form">
+            <Center><TABLE BORDER=1 WIDTH=450>
+                    <TR>
+                        <TD>
+                    <Center>
+                        <p><img src="img/w1.gif" name="wuerfel" Width="32" Height="32" align="Bottom"></p>
+                        <p><input type="button" name="wButton" value="wuerfeln" onclick="klick_wButton();">
+                    </Center>
+                    </TD>
+                    <TD>
+                    <Center>
+                        <p><select name="auswahl" onchange="anzahlWuerfe=document.form.auswahl/*.options[document.form.auswahl.selectedIndex]*/.value;">
+                                <Option value="1">1mal
+                                <option value="10">10mal
+                                <option value="100">100mal
+                                <option value="1000">1000mal
+                            </select>
+                                  <img src="img/w1.gif" name="wuerfel2" Width="32" Height="32" align="Bottom">&nbsp;&nbsp;<img src="img/w1.gif" name="wuerfel2" Width="32" Height="32" align="Bottom"></p>
+                        <p><input type="button" name="wButton2" value="wuerfeln" onclick="klick_wButton2();"><input type="button" name="delButton" value="loeschen" onclick="klick_delButton()">
+                        <p>Augenzahl 2:<input type="text" name="a2" value=""></p>
+                        <p>Augenzahl 3:<input type="text" name="a3" value=""></p> 
+                        <p>Augenzahl 4:<input type="text" name="a4" value=""></p> 
+                        <p>Augenzahl 5:<input type="text" name="a5" value=""></p> 
+                        <p>Augenzahl 6:<input type="text" name="a6" value=""></p> 
+                        <p>Augenzahl 7:<input type="text" name="a7" value=""></p> 
+                        <p>Augenzahl 8:<input type="text" name="a8" value=""></p> 
+                        <p>Augenzahl 9:<input type="text" name="a9" value=""></p> 
+                        <p>Augenzahl 10:<input type="text" name="a10" value=""></p> 
+                        <p>Augenzahl 11:<input type="text" name="a11" value=""></p> 
+                        <p>Augenzahl 12:<input type="text" name="a12" value=""></p> 
+                    </Center>
+                    </TD>
+                    </TR>
+                </table></Center>
+        </Form>
+    </body>
+</html>

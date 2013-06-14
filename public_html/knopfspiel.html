@@ -1,0 +1,388 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Knopfspiel</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="JavaScript">
+            var datum, startzeit, n, count=0;
+            
+            function neu(){
+                count=1;
+                document.myform.anzahl.value=0;
+                for(var i=0;i<=100;i++){
+                    document.myform.elements[i].checked = false
+                    datum = new Date();
+                    startzeit=datum.getTime();
+                    n=Math.floor(Math.random()*100);
+                    document.myform.elements[n].checked = true;
+                }
+                
+            }
+            
+            function klick(){
+                if(count==0)alert("Drücke zuerst den Startknopf!");
+                else{
+                    knopf();
+                    n=Math.floor(Math.random()*100)
+                    document.myform.elements[n].checked = true;
+                    datum= new Date();
+                    var zeit = datum.getTime();
+                    document.myform.anzahl.value = count;
+                    count=count+1
+                    var secs = (zeit-startzeit)/1000
+                    if(secs>10)alert("Game Over");
+                }
+            }
+            
+            function knopf(){
+                var k;
+                for(var i=0;i<=100;i++)
+                if (document.myform.elements[i].checked==true) k=i;
+                if (k != n) alert("Falscher Knopf !");
+                document.myform.elements[n].checked=false;
+                document.myform.elements[k].checked=false;
+                
+            }
+            </script>
+        
+    </head>
+    <body>
+        <form name="myform">
+        <P><FORM ACTION="" METHOD=POST name=myform>
+   <CENTER><FONT SIZE="-2"><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=300 HEIGHT=300>
+      <TR>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick();"></FONT>
+         </TD>
+         <TD WIDTH=25 height=2>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+      </TR>
+      <TR>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+      </TR>
+      <TR>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+      </TR>
+      <TR>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+      </TR>
+      <TR>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+      </TR>
+      <TR>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+      </TR>
+      <TR>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+      </TR>
+      <TR>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+      </TR>
+      <TR>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+      </TR>
+      <TR>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+         <TD WIDTH=25 HEIGHT=25>
+            <P><FONT SIZE="-2"><INPUT TYPE=radio NAME=a VALUE="   " onclick="klick()"></FONT>
+         </TD>
+      </TR>
+   </TABLE>
+    </FONT>
+
+        
+        <P><FONT FACE="verdana, arial, helvetica, sans-serif">Anzahl
+        </FONT><FONT SIZE="-1">&nbsp;&nbsp;</FONT><INPUT TYPE=text NAME=anzahl VALUE="0" SIZE=6></p>
+
+        
+        <p><input type="button" name="start" value="Start" onclick="neu()"></p>
+        </form>
+    </body>
+</html>

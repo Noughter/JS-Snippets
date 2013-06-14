@@ -1,0 +1,773 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>Schatzsuche</TITLE>
+
+<SCRIPT language="JavaScript">
+
+<!--var zeile, spalte;
+
+var xschatz, yschatz;
+
+var count=0;
+
+function zeigeAbstand(zahl) {
+
+var spalte=zahl % 10; // modulo liefert den Divisionsrest
+
+if (spalte==0) spalte=10;
+
+var zeile=1+Math.floor((zahl-1)/10);
+
+var abstand=(xschatz-spalte)*(xschatz-spalte)+(yschatz-zeile)*(yschatz-zeile);
+
+abstand=Math.sqrt(abstand);
+
+abstand=Math.round(abstand);
+
+document.form.abstand.value=abstand;
+
+count=count+1;
+
+document.form.anzahl.value=count;
+
+if (abstand==0) alert('Gefunden !');
+
+}
+
+ 
+
+function neu() {
+
+xschatz=Math.floor(10*Math.random(10))+1;
+
+yschatz=Math.floor(10*Math.random(10))+1;
+
+count=0;
+
+document.form.anzahl.value=count;
+
+document.form.abstand.value=0;
+
+}
+
+--></SCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" onload="neu()">
+
+<CENTER><FONT SIZE="+1" FACE="verdana, arial, helvetica, sans-serif" COLOR="#FF0000">Schatzsuche</FONT>
+
+<P><FONT SIZE="+1"><TABLE BORDER=0 WIDTH=550>
+
+<TR>
+
+<TD>
+
+<P><FONT FACE="verdana, arial, helvetica, sans-serif">Beim
+
+&Ouml;ffnen dieser Seite wurde in einer der Zellen ein
+
+Schatz versteckt.</FONT>
+
+<P><FONT FACE="verdana, arial, helvetica, sans-serif">Wenn
+
+du auf eine der Zellen klickst, zeigt das Feld "Abstand" dir
+
+an, wie weit du von dem Schatz entfernt bist.
+
+Ma&szlig;einheit ist die Kantenl&auml;nge einer
+
+Zelle.</FONT>
+
+<P><FONT FACE="verdana, arial, helvetica, sans-serif">Versuche,
+
+den Schatz mit in m&ouml;glichst wenig Versuchen zu
+
+finden:</FONT>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+</FONT></CENTER>
+
+ 
+
+<FORM ACTION="" name=form>
+
+<CENTER><FONT SIZE="-2"><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=300 HEIGHT=300>
+
+<TR>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=1 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name);"></FONT>
+
+</TD>
+
+<TD WIDTH=25 height=2>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=2 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=3 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=4 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=5 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=6 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=7 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=8 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=9 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=10 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=11 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=12 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=13 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=14 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=15 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=16 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=17 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=18 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=19 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=20 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=21 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=22 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=23 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=24 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=25 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=26 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=27 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=28 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=29 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=30 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=31 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=32 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=33 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=34 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=35 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=36 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=37 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=38 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=39 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=40 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=41 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=42 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=43 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=44 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=45 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=46 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=47 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=48 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=49 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=50 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=51 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=52 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=53 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=54 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=55 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=56 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=57 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=58 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=59 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=60 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=61 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=62 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=63 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=64 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=65 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=66 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=67 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=68 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=69 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=70 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=71 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=72 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=73 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=74 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=75 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=76 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=77 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=78 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=79 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=80 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=81 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=82 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=83 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=84 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=85 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=86 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=87 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=88 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=89 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=90 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=91 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=92 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=93 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=94 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=95 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=96 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=97 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=98 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=99 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+<TD WIDTH=25 HEIGHT=25>
+
+<P><FONT SIZE="-2"><INPUT TYPE=button NAME=100 VALUE="&nbsp;&nbsp;&nbsp;" onclick="zeigeAbstand(this.name)"></FONT>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+</FONT>
+
+ 
+
+<P><FONT FACE="verdana, arial, helvetica, sans-serif">Dein Abstand
+
+betr&auml;gt</FONT><FONT SIZE="-1">&nbsp;&nbsp;</FONT><INPUT TYPE=text NAME=abstand VALUE="" SIZE=6>
+
+ 
+
+<P><FONT FACE="verdana, arial, helvetica, sans-serif">Anzahl der
+
+Versuche</FONT><FONT SIZE="-1">&nbsp;&nbsp;</FONT><INPUT TYPE=text NAME=anzahl VALUE="0" SIZE=6>
+
+ 
+
+<P><INPUT TYPE=button NAME=Absenden VALUE="neues Spiel" onclick="neu()"></CENTER>
+
+</FORM>
+
+ 
+
+<P>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,65 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All Lights On</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <script language="JavaScript">
+            function klick(zahl){
+                oben= zahl-4;
+                unten= Number(zahl) +Number(4);
+                links=zahl-1;
+                rechts=Number(zahl)+1;
+                
+                if(oben<=15 && oben >=0){
+                    form.elements[oben].checked =! form.elements[oben].checked 
+                }
+                
+                if(unten<=15 && unten >=0){
+                    form.elements[unten].checked =! form.elements[unten].checked 
+                }
+                
+                if(rechts<=15 && rechts >=0){
+                    form.elements[rechts].checked =! form.elements[rechts].checked 
+                }
+                
+                if(links<=15 && links >=0){
+                    form.elements[links].checked =! form.elements[links].checked 
+                }
+                
+            }
+            
+            function reset(){
+                for(i=0;i<=15;i++){
+                    form.elements[i].checked=false;
+                }
+            }
+            </script>
+    </head>
+    <body>
+        <form name="form">
+        <input type="checkbox" name="0" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="1" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="2" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="3" value="" onclick="klick(this.name)"></p>
+        <input type="checkbox" name="4" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="5" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="6" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="7" value="" onclick="klick(this.name)"></p>
+        <input type="checkbox" name="8" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="9" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="10" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="11" value="" onclick="klick(this.name)"></p>
+        <input type="checkbox" name="12" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="13" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="14" value="" onclick="klick(this.name)">
+        <input type="checkbox" name="15" value="" onclick="klick(this.name)"></p>
+        
+        <input type="button" name="resetButton" value="reset" onclick="reset()">
+        </form>
+    </body>
+</html>

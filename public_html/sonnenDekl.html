@@ -1,0 +1,179 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sonnen Deklination</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <script src="sonnenDekl.js"></script>
+        <form name="myform">
+            <Center><Font size="+1">Date: </Font><Select name="Monat" onchange="theDataTime()">
+                    <option>Jan
+                    <option>Feb
+                    <option>Mar
+                    <option>Apr
+                    <option>May
+                    <option>Jun
+                    <option>Jul
+                    <option>Aug
+                    <option>Sep
+                    <option>Okt
+                    <option>Nov
+                    <option>Dez
+                </Select>&nbsp;&nbsp;&nbsp; 
+                
+                <SELECT NAME=Tag onchange="theDateTime()">
+            <OPTION>01
+            <OPTION SELECTED>02
+            <OPTION>03
+            <OPTION>04
+            <OPTION>05
+            <OPTION>06
+            <OPTION>07
+            <OPTION>08
+            <OPTION>09
+            <OPTION>10
+            <OPTION>11
+            <OPTION>12
+            <OPTION>13
+            <OPTION>14
+            <OPTION>15
+            <OPTION>16
+            <OPTION>17
+            <OPTION>18
+            <OPTION>19
+            <OPTION>20
+            <OPTION>21
+            <OPTION>22
+            <OPTION>23
+            <OPTION>24
+            <OPTION>25
+            <OPTION>26
+            <OPTION>27
+            <OPTION>28
+            <OPTION>29
+            <OPTION>30
+            <OPTION>31
+        </SELECT> &nbsp;&nbsp;&nbsp; 
+        <SELECT NAME=Jahr onchange="theDateTime()">
+            <OPTION VALUE=1999>1999
+            <OPTION VALUE=2000>2000
+            <OPTION VALUE=2001>2001
+        </SELECT>&nbsp;&nbsp;&nbsp;Local 
+        <FONT SIZE="+1">Time:</FONT>
+        <SELECT NAME=Stunde onchange="theDateTime()">
+            <OPTION>00
+            <OPTION>01
+            <OPTION SELECTED>02
+            <OPTION>03
+            <OPTION>04
+            <OPTION>05
+            <OPTION>06
+            <OPTION>07
+            <OPTION>08
+            <OPTION>09
+            <OPTION>10
+            <OPTION>11
+            <OPTION>12
+            <OPTION>13
+            <OPTION>14
+            <OPTION>15
+            <OPTION>16
+            <OPTION>17
+            <OPTION>18
+            <OPTION>19
+            <OPTION>20
+            <OPTION>21
+            <OPTION>22
+            <OPTION>23
+        </SELECT>&nbsp;&nbsp;&nbsp; 
+        <SELECT NAME=Minute onchange="theDateTime()">
+            <OPTION>00
+            <OPTION>01
+            <OPTION SELECTED>02
+            <OPTION>03
+            <OPTION>04
+            <OPTION>05
+            <OPTION>06
+            <OPTION>07
+            <OPTION>08
+            <OPTION>09
+            <OPTION>10
+            <OPTION>11
+            <OPTION>12
+            <OPTION>13
+            <OPTION>14
+            <OPTION>15
+            <OPTION>16
+            <OPTION>17
+            <OPTION>18
+            <OPTION>19
+            <OPTION>20
+            <OPTION>21
+            <OPTION>22
+            <OPTION>23
+            <OPTION>24
+            <OPTION>25
+            <OPTION>26
+            <OPTION>27
+            <OPTION>28
+            <OPTION>29
+            <OPTION>30
+            <OPTION>31
+            <OPTION>32
+            <OPTION>33
+            <OPTION>34
+            <OPTION>35
+            <OPTION>36
+            <OPTION>37
+            <OPTION>38
+            <OPTION>39
+            <OPTION>40
+            <OPTION>41
+            <OPTION>42
+            <OPTION>43
+            <OPTION>44
+            <OPTION>45
+            <OPTION>46
+            <OPTION>47
+            <OPTION>48
+            <OPTION>49
+            <OPTION>50
+            <OPTION>51
+            <OPTION>52
+            <OPTION>53
+            <OPTION>54
+            <OPTION>55
+            <OPTION>56
+            <OPTION>57
+            <OPTION>58
+            <OPTION>59
+        </SELECT>
+
+
+
+        <P><INPUT TYPE=button NAME=Absenden VALUE="update" onclick="thisDateTime()">
+
+
+
+        <P><FONT SIZE="+1">Julian Day is:
+
+            </FONT><INPUT TYPE=text NAME=JulDay VALUE="" SIZE=25>
+
+
+
+        <P><FONT SIZE="+1">UT is:
+
+            </FONT><INPUT TYPE=text NAME=UTime VALUE="" SIZE=7>
+
+
+
+        <P><INPUT TYPE=text NAME=DateTime VALUE="" SIZE=70></CENTER>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <SCRIPT language="JavaScript"><!--
+
+var zufall, dat, milli, delta, newMilli, count, OK, taskID;
+
+var str='Du hast gemogelt !'+'\n'+'Du darfst das gelbe Feld nicht verlassen bevor gruen erscheint.'+'\n'+'WARNUNG:'+'\n'+'Beim naechsten Fehlstart wird deine Festplatte geloescht !';
+
+var str1="Du musst erst den Knopf 'bereit' druecken !";
+
+ 
+
+function test() {
+
+if ((OK==true) && (document.bild.src.indexOf("img/rotgelb.gif")!=-1)) {window.clearTimeout(taskID);document.bild.src="rot.gif";alert(str);}
+
+}
+
+ 
+
+function neu() {
+
+document.form.ergebnis.value="";
+
+document.bild.src="img/rot.gif"
+
+}
+
+ 
+
+function warten() {
+
+document.bild.src="img/gruen.gif"
+
+dat=new Date();
+
+newMilli=dat.getTime();
+
+}
+
+ 
+
+function bereit() {
+
+OK=true;
+
+document.bild.src="img/rotgelb.gif"
+
+zufall=2+Math.floor(7*Math.random());
+
+taskID=window.setTimeout("warten()",1000*zufall);
+
+count=0;
+
+}
+
+ 
+
+function knopf() {
+
+if (document.bild.src.indexOf("img/rotgelb.gif")!=-1) {window.clearTimeout(taskID);document.bild.src="rot.gif"; alert(str); return true;};
+
+if (document.bild.src.indexOf("img/rot.gif")!=-1) {alert(str1); return true;};count=count+1;dat=new Date();
+
+diff=dat.getTime()-newMilli;
+
+document.form.ergebnis.value=diff + ' Millisekunden fuer '+count;
+
+}
+
+</SCRIPT>
+    </head>
+    <body>
+        <FORM name=form>
+
+<CENTER>
+
+<P><TABLE BORDER=1 BGCOLOR="#FFFF99" CELLPADDING=2 WIDTH=500 HEIGHT=70>
+
+<TR>
+
+<TD HEIGHT=30>
+
+<CENTER><INPUT TYPE=button NAME=Taste VALUE="bereit" onclick="bereit()"></CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+ 
+
+<P><IMG SRC="img/rot.gif" WIDTH=57 HEIGHT=141 ALIGN=bottom name=bild>
+
+ 
+
+<P>&nbsp;<A HREF="#" onmouseover="test();"><FONT SIZE="+4" COLOR="#FFFFFF">__________dies
+
+ist ein link____________</FONT></A>
+
+ 
+
+<P><TABLE BORDER=1 BGCOLOR="#FF0000" WIDTH=550>
+
+<TR>
+
+<TD HEIGHT=70>
+
+<CENTER><INPUT TYPE=button NAME=Taste VALUE="Bremse los" onclick="knopf()"></CENTER>
+
+</TD>
+
+<TD HEIGHT=70>
+
+<CENTER><INPUT TYPE=button NAME=Taste VALUE="auskuppeln" onclick="knopf()"></CENTER>
+
+</TD>
+
+<TD HEIGHT=70>
+
+<CENTER><INPUT TYPE=button NAME=Taste VALUE="Gang rein" onclick="knopf()"></CENTER>
+
+</TD>
+
+<TD HEIGHT=70>
+
+<CENTER><INPUT TYPE=button NAME=Taste VALUE="Gas" onclick="knopf()"></CENTER>
+
+</TD>
+
+<TD HEIGHT=70>
+
+<CENTER><INPUT TYPE=button NAME=Taste VALUE="einkuppeln" onclick="knopf()"></CENTER>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+<P>DeinErgebnis:
+
+<P><INPUT TYPE=text NAME=ergebnis VALUE="" SIZE=30>
+
+<P><INPUT TYPE=button NAME=Taste VALUE="neues Spiel" onclick="neu()">
+
+</CENTER>
+
+</FORM>
+    </body>
+</html>

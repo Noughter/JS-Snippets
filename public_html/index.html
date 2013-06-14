@@ -1,0 +1,241 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <!-- HEAD -->
+    <head>
+        <title>Javascript Formular</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <SCRIPT LANGUAGE="JavaScript">
+            var datum = new Date();
+            var str = document.lastmodified;
+            var da = new Array("Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag");
+
+            function JSClock() {
+                var time = new Date();
+                var hour = time.getHours();
+                var minute = time.getMinutes();
+                var second = time.getSeconds();
+                var day = time.getDay();
+                var tag = da[day];
+                var dat = time.getDate();
+                var month = time.getMonth() + 1;
+                var m = ((month < 10) ? "0" : "") + month + ". ";
+                var y = time.getYear();
+                y = ((y < 1900) ? y + 1900 : y) + ",";// fuer Netscape
+
+
+                var temp = tag + "." + dat + "." + m + y + " " + hour;
+                temp += ((minute < 10) ? ":0" : ":") + minute;
+                temp += ((second < 10) ? ":0" : ":") + second;
+
+                document.js_formular.digitaluhr.value = temp;
+                var id = setTimeout("JSClock()", 1000);
+
+            }
+
+            function changeURL() {
+                for (var i = 0; i < document.js_formular.seitenauswahl.options.length; i++)
+                    if (document.js_formular.seitenauswahl.options[i].selected == true)
+                        open(document.js_formular.seitenauswahl.options[i].value + '.html', target = '_self');
+            }
+
+            function abfrage() {
+                var x = document.js_formular.if_abfrage.value;
+                if (x == 1)
+                    document.js_formular.if_abfrage.value = "Ja,1";
+                else
+                    alert('Nein, Eingabe nicht 1');
+            }
+
+            function addition() {
+                var addition1 = number(document.js_formular.a1.value);
+                var addition2 = number(document.js_formular.a2.value);
+                var addition_ergebnis = addition1 + addition2;
+                document.js_formular.a3.value = addition_ergebnis;
+            }
+
+            function loese() {
+                var p = document.js_formular.p.value;
+                var q = document.js_formular.q.value;
+
+                if (p * p / 4 < q)
+                    document.js_formular.x1.value = "keine Loesung";
+                else {
+                    document.js_formular.x1.value = -p / 2 + Math.sqrt(p * p / 4 - q);
+                    document.js_formular.x2.value = -p / 2 - Math.sqrt(p * p / 4 - q);
+                }
+            }
+
+            function termrechner() {
+                document.js_formular.ausgabe.value = eval(document.js_formular.term.value)
+            }
+
+            function auswahl() {
+                for (var i = 0; i < document.js_formular.menu.options.length; i++)
+                    if (document.js_formular.menu.options[i].selected == true)
+                        document.js_formular.dropdown_textfeld.value = document.js_formular.menu.options[i].value;
+            }
+
+            function text_reset() {
+                document.js_formular.menu.options[0].selected = true;
+                document.js_formular.dropdown_textfeld.value = '';
+
+            }
+
+            function radio_auswahl() {
+                for (var i = 0; i < document.js_formular.length; i++)
+                    if (document.js_formular.elements[i].checked == true)
+                        document.js_formular.myField.value = document.js_formular.elements[i].value;
+            }
+
+            function meinfenster(string) {
+                var win = window.open("", "", "width=250,height=130");
+                win.document.open("text/html");
+                win.document.write("<HTML><HEAD><TITLE>Mein Fenster</TITLE></HEAD><BODY BGCOLOR=yellow>");
+                win.document.write("<CENTER>")
+
+                win.document.write("<FONT size='+1' color=red>");
+
+                win.document.write(string);
+
+                win.document.write("<P>");
+
+                win.document.write("<IMG SRC='img/rot.gif' WIDTH=32 HEIGHT=32>");
+
+                win.document.write("</FONT/>");
+
+                win.document.write("</P>");
+
+                win.document.write("<P></P>");
+
+                win.document.write("<FORM>");
+
+                win.document.write("<INPUT TYPE=button NAME='t' VALUE='schliessen' onclick='self.close()'>")
+
+                win.document.write("</FORM>");
+
+                win.document.write("</CENTER>");
+                win.document.write("</BODY></HTML>");
+
+                win.document.close();
+            }
+
+            function quadrate() {
+                for (var i = 0; i <= 32; i++)
+                    document.write(i + " Quadrat ist gleich " + i * i + "<p>");
+
+            }
+            
+            function keyCodeFenster(){
+                var keyWindow = window.open("","","width=400,height=400");                
+                win.document.open("text/html");
+                win.document.write("<HTML><HEAD><TITLE>Mein Fenster</TITLE></HEAD><BODY BGCOLOR=yellow>");
+                win.document.write("test");
+                win.document.write("</BODY></HTML>");
+                
+                win.document.close();               
+            }           
+            
+            function getKeyCode(event) {
+            event = event || window.event;
+            return event.keyCode;
+            }
+        </script>
+    </head>
+
+    <!-- BODY -->
+    <body onload="JSClock()">
+        <form name="js_formular">
+            <p><SELECT Name="seitenauswahl" onchange="changeURL()">
+                    <Option value="index">Home
+                    <option value="additiveColors">Additive Farbmischung
+                    <option value="sonnenDekl">Sonnen Deklination
+                    <option value="schatzsuche">Schatzsuche
+                    <option value="ampelspiel">Ampel Spiel
+                    <option value="allLightsOn"> All Lights On
+                    <option value="knopfspiel">Knopfspiel
+                    <option value="wiederstaende">Wiederstände
+                    <option value="wuerfeln">Wuerfeln
+                     <option value="passwordRequest">PasswordRequest
+                </SELECT>
+            <p>Digitaluhr:<input type="text" name="digitaluhr" value="" Size="50">
+            <table border="1">
+                <TR><TD><p><INPUT type="text" name="textfeld" value="Ein Textfeld" size="30"><input type="button" name="textfeld_button" value="show_text" onClick="var s = js_formular.textfeld.value;  alert(s)"></p>
+                        <P><TEXTAREA NAME="area" ROWS=5 COLS=30 WRAP="virtual">Dies ist eine Textarea</TEXTAREA></TD>
+                <p><TD><INPUT TYPE="checkbox" NAME="Markierungsfeld_1" VALUE="Wert"></p>
+                <p><INPUT TYPE=radio NAME=Auswahlfeld VALUE=Wert883945></p>
+                <p><SELECT NAME=Name><OPTION>Eintrag 1 <OPTION>Eintrag 2</SELECT></p></TD>
+                </TR>
+            </table>
+            
+                <p><INPUT TYPE=button VALUE="Datum" ONCLICK="var s = datum;
+                alert(s)"><INPUT TYPE=button VALUE="Browser" onclick='var s = "Sie benutzen den Browser" + navigator.appName + " " + navigator.appVersion;
+                alert(s);'></p>
+                <p><INPUT TYPE=text NAME=if_abfrage VALUE="If-Abfrage hier" SIZE=30><input type="button" name="send_if" value="if-Abfrage" onclick="abfrage();"></p>
+                <p><input type="button" name="dialog_button" value="Dialog-Button" onclick="var name = prompt('Wie ist dein Vorname?');
+                alert('Hallo wie gehts ' + name + ' !');">
+                    <input type="button" name="fenster_button" value="Fenster" onclick="meinfenster('Mein Text und Bild');">
+
+            <p><input type="text" name="a1" value="" size="10">+<input type="text" name="a2" value="" size="10">=<input type="text" name="a3" value="Addition" size="20"><input type="button" name="add_button" value="Addition" onclick="addition();">bugged</p>
+            
+            <p><input type="button" name="keyCodeTestButton" value="keyCodeTest" onclick="keyCodeFenster();"</p>
+            
+            
+            <div style="float:left">
+                    <h3>Quadratwurzel</h3>
+                    <p>Wie groß ist die Quadratwurzel aus
+                        <Input type="textfeld" name="quadratwurzel" value="" size="5"></p>
+                        <Input type="button" name="quadratButton" value="antwort" onclick="document.js_formular.quadratwurzelErgebnis.value = Math.sqrt(document.js_formular.quadratwurzel.value)"></p>
+                        <Input type="textfeld" name="quadratwurzelErgebnis" value="" size="5"></p>
+                        
+                        <Input type="button" name="quadrate_button" value="Quadratzahlen" onclick="quadrate();">
+
+                    <h3>Dropdown</h3>
+                    <SELECT NAME=menu onchange="auswahl();">
+                        <option>Bitte wählen
+                        <option value="option1">Option1
+                        <option value="option2">Option2
+                        <option value="option3">Option3
+                    </SELECT>
+                <FONT SIZE="+1">Ausgew&auml;hlt:</FONT><INPUT TYPE=text NAME=dropdown_textfeld VALUE="" SIZE=15>
+                    <P><INPUT TYPE=button NAME="r_button" VALUE="zur&uuml;cksetzen" onclick="text_reset();"></P>
+                </br>
+           
+                    <h3>Radio-Auswahl</h3>
+                    <p><INPUT TYPE=radio NAME=myRadio VALUE=Feld1 CHECKED onclick="radio_auswahl()">Auswahlfeld1</p>
+                    <p><INPUT TYPE=radio NAME=myRadio VALUE=Feld2 onclick="radio_auswahl()">Auswahlfeld2</p>
+                    <p><INPUT TYPE=radio NAME=myRadio VALUE=Feld3 onclick="radio_auswahl()">Auswahlfeld3</p>
+                    <p><input type="text" name="myField" value="Feld1" size="30"></p>
+                </div>
+
+            <div style="float:right">
+                <h3>pq Rechner</h3>
+                <p>x<SUP>2+<INPUT TYPE=text NAME=p VALUE="" SIZE=5>x+ <INPUT TYPE=text NAME=q VALUE="" SIZE=5>=0<INPUT TYPE=button NAME=knopf VALUE="loesen" onclick="loese();"></p>
+                        <P><FONT SIZE="+1"><B>x1=<INPUT TYPE=text NAME=x1 VALUE="" SIZE=30></B></FONT>
+                        <P><FONT SIZE="+1"><B>x2=<INPUT TYPE=text NAME=x2 VALUE="" SIZE=30></B></FONT></CENTER>
+
+                        <h3>Termrechner</h3>
+                        <p><input type="text" name="term" value="3*6" size="30"> = <input type="text" name="ausgabe" value="" size="20"></p>
+                        <P><INPUT TYPE=button NAME=b VALUE="rechne" onclick="termrechner();"></p>
+                
+            
+            <center>Diese Seite wurde zuletzt g&auml;ndert am:
+                <P><SCRIPT LANGUAGE=JavaScript>
+            var str = document.lastModified;
+            document.write(str);
+            document.write("<P>");
+            document.write(str.substring(0, 3));
+                    </SCRIPT>
+                     <a href='#' onmouseover="window.status = 'Dieser Text erscheint'" onmouseout="windows.status = ''">Betrachte den window.status</a>
+                     </center>
+             
+            </div>
+            </br>
+        </form>
+
+    </body>
+</html>
